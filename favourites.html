@@ -19,8 +19,14 @@
 .stars span.active{color:gold;}
 .heart{font-size:30px; cursor:pointer; color:red;}
 .navbar{margin-bottom:30px;}
-@media(max-width:1100px){.cards{grid-template-columns:repeat(2,250px);}}
-@media(max-width:600px){.cards{grid-template-columns:repeat(1,250px);}}
+ /* Responsive */
+@media(max-width:1200px){
+  .cards{grid-template-columns:repeat(2, 300px);}
+}
+@media(max-width:650px){
+  .cards{grid-template-columns:repeat(1, 300px);}
+}
+
 </style>
  <style>
     body {
