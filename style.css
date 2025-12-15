@@ -1,0 +1,186 @@
+ .navbar { background-color: #ad1152; }
+        .nav-link, .navbar-brand { color: white !important; }
+
+.carousel .carousel-item img{
+       width: 100%;
+       height: auto;
+       display: block;
+       height: 500px;
+    padding: 0px;
+        object-fit: cover;
+    }
+    .card .card-img-top{
+      height: 300px;
+      object-fit: cover;
+    }
+
+        /* Scroll area */
+    .carousel1 , .carousel2 {
+      margin-top: 36px;
+      position: relative;
+      overflow: hidden;
+      padding: 18px 0;
+      background: var(--carousel-bg);
+      
+    }
+
+    /* the track is wide (content repeated) */
+    .track1, .track2 {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      will-change: transform;
+    }
+
+    /* individual card */
+    .card1, .card2 {
+       gap:3em;
+      flex: 0 0 auto;
+      width: 250px;   /* requested width */
+      height: 300px;  /* requested height */
+      background: var(--card-bg);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.6);
+      position: relative;
+      user-select: none;
+    }
+
+    .card1 img, .card2 img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display:block;
+      -webkit-user-drag: none;
+    }
+
+    /* small overlay title */
+    .card1 .label, .card2 .label{
+      position: absolute;
+      left: 14px;
+      bottom: 12px;
+      background: rgba(0,0,0,0.45);
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-weight:600;
+      font-size:14px;
+      color:#fff;
+      backdrop-filter: blur(4px);
+    }
+
+    /* pause hint */
+       .carousel1::after, .carousel2::after {
+   
+         position: absolute;
+         right: 12px;
+         bottom: 12px;
+         font-size: 12px;
+         color: rgba(255,255,255,0.6);
+         text-shadow: 0 0 6px rgba(0,0,0,0.5);
+         user-select: none;
+       }
+
+    /* responsive: allow cards to scale down on small screens */
+    @media (max-width: 860px){
+      .card { width: 90vw; height: calc(90vw * 400 / 700); } /* keep aspect ratio */
+    }
+
+
+
+    /*gallery card section*/
+    .flex{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:wrap;
+}
+  
+
+   .card-box{
+  display:flex;
+  grid-template-rows:repeat(4, 300px);
+  gap:25px;
+  padding:40px;
+  justify-content:center;
+}
+
+.card-box{
+
+  padding: 30px;
+  width:300px;
+  height: 400px;
+  color:#fff;
+}
+
+.card-g {
+    width:250px;
+  height:350px;
+  border-radius:18px;
+  overflow:hidden;
+  position:relative;
+  cursor:pointer;
+}
+
+.card-g img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.5s;
+}
+
+.card-g:hover img{
+  transform:scale(1.1);
+}
+
+.overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.6);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  opacity:0;
+  transition:.4s;
+}
+
+.card-g:hover .overlay{
+  opacity:1;
+}
+
+.controls{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-top:8px;
+}
+
+.rating i{
+  font-size:18px;
+  color:#555;
+  cursor:pointer;
+}
+
+.rating i.active{
+  color:gold;
+}
+
+.heart {
+  
+  font-size:20px;
+  color:#aaa;
+  cursor:pointer;
+}
+
+.heart.active{
+  color:red;
+}
+
+/* Responsive */
+@media(max-width:1200px){
+  .cards{grid-template-columns:repeat(2, 300px);}
+}
+@media(max-width:650px){
+  .cards{grid-template-columns:repeat(1, 300px);}
+}
